@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SideBar from './components/SideBar';
 import Users from './pages/Users';
+import FAQs from './pages/FAQs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Users />
+    <FAQs />
   </React.StrictMode>
 );
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./FAQs.css";
+import Sidebar from "../components/SideBar";
 
 function FAQs() {
   const [faqPopup, setFaqPopup] = useState(false);
@@ -12,7 +13,9 @@ function FAQs() {
     "Is AR bad for kids?",
   ];
 
-  return (
+  return ( <>
+  <Sidebar />
+ 
     <div className="container">
 
       <div className="top">
@@ -95,6 +98,7 @@ function FAQs() {
         </div>
       )}
     </div>
+     </>
   );
 }
 
