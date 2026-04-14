@@ -1,0 +1,323 @@
+/* --- Global Styles --- */
+:root {
+  --bg-color: #eef1f6;
+  --card-bg-color: #ffffff;
+  --text-color-primary: #1f2937;
+  --text-color-secondary: #6b7280;
+  --border-color: #d1d5db;
+  --input-bg-color: #f3f4f6;
+  --primary-blue: #34459C;
+  --primary-blue-hover: #1e40af;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
+}
+
+/* --- Main Layout & Responsiveness --- */
+.page-wrapper {
+  /* Sidebar account margin - handles pre-coded sidebar */
+  margin-left: 250px; 
+  padding: 40px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.content-area {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.page-subtitle {
+  color: var(--text-color-secondary);
+  font-size: 15px;
+}
+
+/* Grid layout for cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stacked by default (mobile) */
+  gap: 20px;
+}
+
+/* --- Card Common Styling --- */
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px var(--shadow-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Slight lift animation on card hover */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Card header (icon + title) */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.card-icon {
+  font-size: 18px;
+  margin-right: 12px;
+  color: var(--text-color-secondary);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Card content body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Card action button area */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* --- Form Elements Styling --- */
+/* Common inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text-color-primary);
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--input-bg-color);
+  color: var(--text-color-primary);
+  transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background-color: #ffffff;
+}
+
+/* Inputs with icons */
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--text-color-secondary);
+}
+
+.input-with-icon .input-field {
+  padding-left: 36px;
+}
+
+/* Row-based form groups */
+.form-group.row {
+  display: flex;
+  gap: 15px;
+}
+
+.input-group.half {
+  flex: 1;
+}
+
+.input-group.full {
+  width: 100%;
+}
+
+/* Common Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-blue-hover);
+}
+
+.btn:active {
+  transform: scale(0.98); /* Click shrink animation */
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+/* --- Toggle Switch Styling --- */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.setting-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.setting-item.with-margin {
+  margin-top: 15px;
+}
+
+.setting-item.toggle-only {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.setting-desc {
+  font-size: 13px;
+  color: var(--text-color-secondary);
+}
+
+/* The switch - the box around the slider */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+/* Hide default HTML checkbox */
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.3s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: var(--primary-blue);
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+/* --- Media Queries (Responsiveness) --- */
+
+/* Desktop view (large screens) */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-column grid on desktop */
+  }
+}
+
+/* Mobile full-width override */
+@media (max-width: 768px) {
+  .page-wrapper {
+    margin-left: 0; /* Remove sidebar account margin on mobile */
+    padding: 20px;
+  }
+
+  .form-group.row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
