@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
 import Sidebar from '../components/SideBar';
+import SEO from '../components/SEO';
 
 class Dashboard extends Component {
   render() {
     return (<>
-    
-    
+    <SEO
+      title="Dashboard"
+      description="Tilion admin dashboard: platform overview, metrics, and activity for the kids social app — supporting parent and child dashboard experiences and web advertising operations."
+    />
         <Sidebar/>
     
     
@@ -136,7 +139,7 @@ class Dashboard extends Component {
                 <span className="badge pending">Pending</span>
               </li>
             </ul>
-            <button className="view-all-btn">View all requests →</button>
+            <button type="button" className="view-all-btn">View all requests →</button>
           </div>
         </section>
 
@@ -196,7 +199,7 @@ class Dashboard extends Component {
                 <span className="feed-time">41 min ago</span>
               </li>
             </ul>
-            <button className="view-all-btn center">View complete activity log →</button>
+            <button type="button" className="view-all-btn center">View complete activity log →</button>
         </section>
 
         {/* Screen Time Distribution */}

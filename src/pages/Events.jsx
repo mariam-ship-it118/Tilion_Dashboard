@@ -1,10 +1,15 @@
 import React from 'react';
 import './Events.css';
 import Sidebar from '../components/SideBar';
+import SEO from '../components/SEO';
 
 const EventDetailsPage = () => {
   return (
     <>
+    <SEO
+      title="Events & organization"
+      description="Configure Tilion events and organization details. Tilion is a kids social platform with parent and child dashboards and web advertising tools."
+    />
     <Sidebar/>
     <div className="page-wrapper">
       <div className="content-area">

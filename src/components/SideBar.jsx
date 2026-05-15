@@ -99,6 +99,7 @@
 
 
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import "./SideBar.css";
 import {
@@ -116,18 +117,18 @@ import {
 } from "react-icons/fi";
 
 const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState("Users");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
+  /** `to` matches paths in `RoutingApp.jsx` (`Route path`). Omit `to` when no route exists yet. */
   const navItems = [
-    { name: "Dashboard", icon: <FiGrid /> },
-    { name: "Events", icon: <FiCalendar /> },
-    { name: "Users", icon: <FiUsers /> },
+    { name: "Dashboard", icon: <FiGrid />, to: "/" },
+    { name: "Events", icon: <FiCalendar />, to: "/events" },
+    { name: "Users", icon: <FiUsers />, to: "/users" },
     { name: "Payments", icon: <FiCreditCard /> },
     { name: "Reviews", icon: <FiStar /> },
-    { name: "About Page", icon: <FiFileText /> },
-    { name: "FAQs", icon: <FiHelpCircle /> },
-    { name: "Settings", icon: <FiSettings /> },
+    { name: "About Page", icon: <FiFileText />, to: "/about" },
+    { name: "FAQs", icon: <FiHelpCircle />, to: "/faqs" },
+    { name: "Settings", icon: <FiSettings />, to: "/settings" },
   ];
 
   const toggleMobileMenu = () => {
@@ -176,16 +177,28 @@ const Sidebar = () => {
         <nav className="nav-menu">
           <ul>
             {navItems.map((item) => (
-              <li
-                key={item.name}
-                className={`nav-item ${activeItem === item.name ? "active" : ""}`}
-                onClick={() => {
-                  setActiveItem(item.name);
-                  closeMobileMenu();
-                }}
-              >
-                <span className="icon">{item.icon}</span>
-                <span className="text">{item.name}</span>
+              <li key={item.name}>
+                {item.to != null ? (
+                  <NavLink
+                    to={item.to}
+                    end={item.to === "/"}
+                    className={({ isActive }) =>
+                      `nav-item${isActive ? " active" : ""}`
+                    }
+                    onClick={closeMobileMenu}
+                  >
+                    <span className="icon">{item.icon}</span>
+                    <span className="text">{item.name}</span>
+                  </NavLink>
+                ) : (
+                  <span
+                    className="nav-item nav-item--disabled"
+                    title="No page linked yet"
+                  >
+                    <span className="icon">{item.icon}</span>
+                    <span className="text">{item.name}</span>
+                  </span>
+                )}
               </li>
             ))}
           </ul>

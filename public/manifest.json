@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tilion",
+  "name": "Tilion — Parent & Child Dashboard",
+  "description": "Admin dashboard for Tilion, the social media app for kids — parent and child interfaces, safety, and web advertising tools.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#2d3a8c",
+  "background_color": "#eaefff"
 }

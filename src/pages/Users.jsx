@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SideBar from '../components/SideBar';
+import SEO from '../components/SEO';
 
 const Users = () => {
     return (
         <div className="dashboard-wrapper">
+            <SEO
+              title="Users & connections"
+              description="Manage friend connections and child accounts on Tilion — the safe social media app for kids with separate parent and child dashboard interfaces."
+            />
             <SideBar />
             <main className="main-content">
     
