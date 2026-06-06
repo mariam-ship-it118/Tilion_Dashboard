@@ -14,6 +14,7 @@ class Dashboard extends Component {
     
     
       <div className="dashboard-container">
+        <div className="dashboard-body">
         <header className="dashboard-header">
           <h1>Dashboard</h1>
           <p>Platform overview and key metrics.</p>
@@ -245,6 +246,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </section>
+        </div>
       </div>
       </>
     );
